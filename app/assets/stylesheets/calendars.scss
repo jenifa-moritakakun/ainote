@@ -1,0 +1,139 @@
+/* リセットCSS */
+body {
+  font-size: 14px;
+  color: #333;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+ul,li {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  height: 70px;
+  width: 100vw;
+  background-color: #ffdaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.app_title {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  font-size: 20px;
+}
+
+.page_name {
+  position: absolute;
+}
+
+.sign_up {
+  position: absolute;
+  right: 70px;
+}
+
+.hensyuubotan {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 10px;
+  background-color: rgb(252, 201, 201);
+}
+
+.top-image {
+  width: 40px;
+  height: 35px;
+  padding: 3px 0;
+  margin: 5px;
+}
+
+main {
+  background-image: image-url('haikei.png');
+  height: calc(100vh - 170px);
+}
+
+.wrapper {
+  display: flex;
+}
+
+.main_calendar{
+  display: flex;
+}
+
+.month_calendar {
+  width: calc(100vw - 300px);
+  height: auto;
+  margin: 30px;
+}
+
+.calendar-title {
+  font-size: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.main_plan{
+  display: flex;
+  position: relative;
+}
+
+.plan {
+  margin-top: 20px;
+  width: 300px;
+}
+
+.memo {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.chat_link {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.q_and_a_link {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.main_sub a {
+  text-decoration-line: none;
+  background:linear-gradient(transparent 70%, #f8b7e2 0%);
+}
+
+footer {
+  background-color: #ffefcc;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.footer_box {
+  position: relative;
+  position: absolute;
+  height: 100px;
+  width: 300px;
+}
+
+.remaining {
+  position: absolute;
+}
+
+.countdown {
+  color: #fcb448;
+  position: absolute;
+  margin: 30px 0 0 150px;
+}
