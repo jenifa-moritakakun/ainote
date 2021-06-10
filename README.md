@@ -8,7 +8,7 @@ ainote（合いの手）
 
 # URL
 
-
+https://ainote.herokuapp.com/
 
 # テスト用アカウント
 
@@ -16,7 +16,7 @@ ainote（合いの手）
 
 # 利用方法
 
-
+新規登録画面へ遷移した後は、カレンダーに今日の体調やメモ、予定を残す事ができ、チャット画面へ遷移すれば、妊婦さん同士での情報交換ができます。
 
 # 目指した課題解決
 
@@ -29,7 +29,8 @@ ainote（合いの手）
 
 # 実装した機能についての画像やGIF及びその説明
 
-
+[![Image from Gyazo](https://i.gyazo.com/bd0bce0038628545cfbe5234b15e7f24.png)](https://gyazo.com/bd0bce0038628545cfbe5234b15e7f24)
+トップ画面にカレンダーが表示されるようにしました
 
 # 実装予定の機能
 
@@ -41,79 +42,10 @@ ainote（合いの手）
 
 # データベース設計
 
-ainote.png
+[![Image from Gyazo](https://i.gyazo.com/3fbe40fcfbf3e40306ca8e6e7fc2fd0c.png)](https://gyazo.com/3fbe40fcfbf3e40306ca8e6e7fc2fd0c)
 
 # ローカルでの動作方法
 
+HTML、CSS、Ruby、Ruby on Rails、JavaScript
+Bootstrap、Simple＿calendar
 
-
-
-# テーブル設計
-
-## calendarsテーブル
-
-| Column             | Type       | Options                    |
-| ------------------ | ---------- | -------------------------- |
-| start_time         | datetime   | null: false                |
-| user               | references | foreign_key: true          |
-
-### アソシエーション
-
-- belongs_to :user
-- has_many :plans
-
-## usersテーブル
-
-| Column             | Type    | Options                    |
-| ------------------ | ------- | -------------------------- |
-| nickname           | string  | null: false                |
-| email              | string  | null: false, unique: false |
-| encrypted_password | string  | null: false                |
-| baby_due           | integer | null: false                |
-
-### Association
-
-- has_one :calendar
-- has_many :plans
-- has_many :rooms
-- has_many :chats
-
-## plansテーブル
-
-| Column             | Type       | Options                 |
-| ------------------ | ---------- | ----------------------- |
-| title              | text       | null: false             |
-| content            | text       | null: false             |
-| calendar           | references | null: false             |
-| user               | references | null: false             |
-
-### アソシエーション
-
-- belongs_to :calendar
-- belongs_to :user
-
-## roomsテーブル
-
-| Column | Type      | Options           |
-| ------ | --------- | ----------------- |
-| title  | string    | null: false       |
-| topic  | string    | null: false       |
-| user   | reference | foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- has_many   :chats
-
-## chatsテーブル
-
-| Column | Type      | Options           |
-| ------ | ----------| ----------------- |
-| image  | text      |                   |
-| text   | string    |                   |
-| user   | reference | foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :room
