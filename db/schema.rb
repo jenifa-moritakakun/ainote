@@ -13,6 +13,8 @@
 ActiveRecord::Schema.define(version: 2021_06_07_065812) do
 
   create_table "calendars", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.text "title", null: false
+    t.text "content", null: false
     t.bigint "user_id"
     t.datetime "start_time", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -21,8 +23,8 @@ ActiveRecord::Schema.define(version: 2021_06_07_065812) do
   end
 
   create_table "plans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.text "title"
-    t.text "content"
+    t.text "title", null: false
+    t.text "content", null: false
     t.bigint "calendar_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -44,7 +46,7 @@ ActiveRecord::Schema.define(version: 2021_06_07_065812) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "nickname", null: false
-    t.integer "baby_due", null: false
+    t.date "baby_due", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

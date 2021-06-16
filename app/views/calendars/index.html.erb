@@ -20,9 +20,18 @@
       <div class="hensyuubotan">
         <img src="assets/header.png" alt="編集ボタン" class="top-image">
       </div>
-      <div class="sign_up">
-        <%= link_to '新規登録', 'users/sign_up' %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="log_out">
+          <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+        </div>
+      <% else %>
+        <div class="sign_up">
+          <%= link_to '新規登録', 'users/sign_up' %>
+        </div>
+        <div class="log_in">
+          <%= link_to 'ログイン', user_session_path %>
+        </div>
+      <% end %>
     </header>
       
     <main>      
@@ -39,7 +48,7 @@
     <footer>
       <div class="footer_box">
         <h4 class="remaining">産まれるまであと</h4>
-        <h1 class="countdown">〇〇日</h1>
+        <h1 class="countdown">23日</h1>
       </div>
     </footer>
   </body>

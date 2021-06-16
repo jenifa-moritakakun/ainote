@@ -1,7 +1,22 @@
 <h2>今日の予定</h2>
   <%= form_with url: "/posts", method: :post, local: true do |form| %>
+    <label class="form-text">日にち</label>
+    <div class='input-time-wrap'>
+      <%= raw sprintf(
+                form.date_select(
+                    :start_time,
+                    class:'input-default',
+                    id:"start_time",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: (Time.now.year),
+                    end_year: (Time.now.year + 3),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+      </div>
+    <label class="form-text">タイトル</label>
     <%= form.text_field :title %>
-    <%= form.text_field :content %>
-    <%= form.text_field :start_time %>
+    <label class="form-text">内容</label>
+    <%= form.text_field :content %><br>
     <%= form.submit '書き込む' %>
   <% end %>
